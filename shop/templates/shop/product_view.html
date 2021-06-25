@@ -1,0 +1,54 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title %} Krishna Electronics {{product.name}} {% endblock %}
+{% block body %}
+
+
+<!--product-->
+
+<div class="product_modal" >
+    <div class = "product_modal_content">
+        <div class = "product_modal_content_info">
+
+            <a href="javascript:history.go(-1);" class="product_modal_close"> &#10006; CLOSE </a>
+            <p>{{product.product_name}}</p>
+        </div>
+        <div class = "product_modal_content_images">
+            {% if product.display_image %}
+                <img src="/media/{{product.display_image}}">
+            {% endif %}
+            {% if product.prod_img1 %}
+                <img src="/media/{{product.prod_img1}}">
+            {% endif %}
+            {% if product.prod_img2 %}
+                <img src="/media/{{product.prod_img2}}">
+            {% endif %}
+            {% if product.prod_img3 %}
+                <img src="/media/{{product.prod_img3}}">
+            {% endif %}
+            {% if product.prod_img4 %}
+                <img src="/media/{{product.prod_img4}}">
+            {% endif %}
+            {% if product.prod_img5 %}
+                <img src="/media/{{product.prod_img5}}">
+            {% endif %}
+            {% if product.prod_img6 %}
+                <img src="/media/{{product.prod_img6}}">
+            {% endif %}
+            {% if product.prod_img7 %}
+                <img src="/media/{{product.prod_img7}}">
+            {% endif %}
+            {% if product.prod_img8 %}
+                <img src="/media/{{product.prod_img8}}">
+            {% endif %}
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title %} Krishna Electronics -> {{temp}} {% endblock %}
+{% block body %}
+
+<!--product_cat-->
+<!--temp-->
+<!--specific_banners-->
+
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<div class="viewall_page_product_category">
+    <p>
+        <a href="/"  id="viewall_page_back"> Home </a> &nbsp;
+        &#10095; &nbsp; {{temp}}
+    </p>
+    
+    <p>
+        <a href="javascript:history.go(-1);" 
+        style=" 
+            background-color: #666;
+            color: white;
+            padding: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50px;
+            box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.2);
+        "> &#8592; Back</a>
+    </p>
+    
+
+</div>
+
+
+{% for i in specific_banners %}
+    <div class="main_page_banners">
+        <img src="/media/{{i.sb_img1}}" alt="">
+    </div>
+{% endfor %}
+
+
+
+
+<div class="viewall_page_boxes" >
+
+{% for i in product_cat %}
+    <a href="/products/{{i.product_id}}" style=" text-decoration:none; color: rgb(32, 31, 31);">-->
+        <div class="container" >
+            <div class = "container_image">
+                <img src="/media/{{i.display_image}}" alt="">
+            </div>
+            <br>
+            <p class="description"> {{ i.product_name }} </p>
+        </div>
+    </a>
+
+{% endfor %}
+</div>
+
+
+
+
+{% for i in specific_banners %}
+    <div class="main_page_banners">
+        <img src="/media/{{i.sb_img2}}" alt="">
+    </div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

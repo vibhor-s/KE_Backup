@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href=" {%static 'shop/css/style1_pc.css' %} ">
+    <link rel="stylesheet" media="screen and (max-width: 1050px)" href=" {%static 'shop/css/style2_phone.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&family=PT+Serif:ital@1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>{% block title %}  {% endblock %} </title>
+
+</head>
+
+<body>
+    <div class="top_row">
+        <div class="scroll-left">
+            <p id="welcome">Welcome to Krishna Electronics</p>
+        </div>
+        <div class="top_right_buttons">
+
+            <div id="sidemenu">
+                <div class="side_nav" id="mySideNav">
+                    <!-- this is the side menu -->
+                    <a class="closebtn" onclick="closeNav()"
+                        style="background-color: rgb(29 29 29); font-size: 25px; padding-top: 20px; padding-bottom: 20px;">
+                        Close &#x2715;</a>
+                    <br><br>
+
+
+                    <div class="sidemenu_allproducts">
+                        <a onclick="close_product_submenu()">Products
+                            <i id="close_product_submenu_plus_button" class="fa fa-plus-square" style="padding:0; width:2em"></i>
+                            <i id="close_product_submenu_minus_button" class="fa fa-minus-square" style="padding:0; width:2em; display: none;"></i>
+                        </a>
+                        <div id="sidemenu_product_submenu">
+                            {% for i in category_list %}
+                                <a href="/viewall/{{i}}" > <img src="../../media/shop/icons/{{i}}.png" id="icons"> &ensp; {{i}} </a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <a href="/about">About Us</a>
+                    <a  href="#contact_link" onclick="closeNav()">Contact Us</a>
+                    <br><br><hr><br><br>
+
+                    <!--krishna electronics new logo here-->
+                    <img src="../static/shop/images/ham menu logo.jpg" style="height: 65px; margin-left:30px;">
+
+
+                    <br><br>
+                    <p style='font-family: "Nunito",sans-serif; font-size: 12px; text-align: left; margin-left: 15px;'>
+                        FOLLOW US ON</p>
+                    <div class="social_media_side_container">
+                        <a href="https://www.facebook.com/official.krishna.electronics/" class="social_media_sidemenu social_media_sidemenu_fb"  target="_blank"></a>
+                        <a href="https://www.google.com/search?q=krishna+electronics+sardhana&oq=krishna+electronics+sardhana&aqs=chrome..69i57j46i175i199j69i60l2.8259j1j7&sourceid=chrome&ie=UTF-8" class="social_media_sidemenu social_media_sidemenu_google" target="_blank"></a>
+                        <a href="http://www.instagram.com/krishnaelectronicssardhana" class="social_media_sidemenu social_media_sidemenu_insta" target="_blank"></a>
+                    </div>
+                    <br><br>
+                    <p style='font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; text-align: left; margin-left: 15px;'>
+                        © Copyright 2021 Krishna Electronics <br> All rights reserved</p>
+                </div>
+            </div>
+
+            <a onclick="openNav()" style="padding:0px;">
+                <div id="hamburger_icon">
+                    <i class="material-icons" style="font-size:20px">menu</i>
+                </div>
+            </a>
+            <!-- exp here -->
+            <a href="/about" style="padding:0px;">
+                <div id="about_us">
+                    About Us
+                </div>
+            </a>
+
+            <a href="/">
+                <div id="home_page">
+                    Home
+                </div>
+            </a>
+
+
+            <a href="https://www.google.com/maps/place/Krishna+electronics/@29.1425202,77.6107154,15z/data=!4m5!3m4!1s0x0:0xdefaa7c8927c872e!8m2!3d29.14255!4d77.6107359"
+                target="_blank">
+                <div id="location">
+                    <i class="material-icons" style="font-size:15px">place</i>
+                    Location
+                </div>
+            </a>
+            <a href="#contact_link">
+                <div id="contact_us">
+                    Contact Us
+                </div>
+            </a>
+         </div>
+    </div>
+
+
+
+
+
+    <div  class="principal_pc">
+        <video width="100%" height="auto" autoplay muted>
+            <source src="../static/shop/videos/principal_video_pc.mp4" type="video/mp4">
+        </video>
+        <!-- <h1>Krishna Electronics</h1>
+        <h3>Transforming Shopping into Experience</h3>
+        <h3>Hari Enclave, Meerut Road, Sardana 203001</h3> -->
+    </div>
+
+
+    <div class="principal_phone">
+        <video width="100%" height="auto" autoplay muted>
+            <source src="../static/shop/videos/principal_video_phone.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+    <div class="navbar">
+
+        <!-- dropdown menu for all products button -->
+
+        <div class="dropdown">
+            <div class="dropbtn">
+                All Products <i class="arrow down"> </i>
+            </div>
+            <!-- <br> <br> <br> -->
+            <div class="dropdown-content">
+                <a> Our Ranges: </a>
+                {% for i in category_list %}
+                    <a href="/viewall/{{i}}"> <img src="../../media/shop/icons/{{i}}.png" id="icons"> &ensp; {{i}} </a>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- dropdown menu for all products button -->
+
+        <div class="scrollmenu">
+            {% for i in category_list %}
+                <a href="/viewall/{{i}}">
+                    {{i}}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+sticky here
+-->
+    <div class="side_sticky_icons sticky_animation" >
+        <a href="https://api.whatsapp.com/send?phone=+91-9412366719&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank" style="background-color: #25d366;">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+        <a href="tel:+91-9412366719" class="float" target="_blank" style="background-color: #55ACEE;">
+            <i class="fa fa-phone my-float"></i>
+        </a>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block body %}        {% endblock %}
+
+    <div class="contact-form" id="contact_link">
+        <h1>Contact Us</h1>
+        <h3>For all enquiries, kindly leave us a message </h3>
+        <form action="/" method="post">{% csrf_token %}
+            <div class="contact-fields">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+            </div>
+            <div class="contact-fields">
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+            </div>
+            <div class="contact-fields">
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+
+            <div class="contact-fields">
+                <textarea id="message-box" name="message"  cols="30" rows="10" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="contact-fields">
+                <button type="submit" id="contact-form-submit-button1">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="all_details_block" style="padding-top: 50px;">
+        <div class="all_details_block_logo">
+            <img src="../static/shop/images/all_details_block_logo.jpg" style="height: 65px;">
+            <p style="font-size: 12px; margin-top:0px; font-family: cursive;">Transforming Shopping into Experience</p>
+        </div>
+        
+        <div class="all_details_block_col">
+            <div class="all_details_block_col_item1">
+                <a href="https://www.google.com/maps/place/Krishna+electronics/@29.1425202,77.6107154,15z/data=!4m5!3m4!1s0x0:0xdefaa7c8927c872e!8m2!3d29.14255!4d77.6107359"
+                target="_blank"><i class="material-icons all_details_block_col_icons"> location_on </i></a> 
+            </div>
+            <div class="all_details_block_col_item2">
+                <p>Address: </p>
+                <p>Krishna Electronics, Binoli Road </p>
+                <p>Near Devi Mandir,  Sardhana </p>
+                <p>District Meerut U.P. 250342</p>
+            </div>
+        </div>  
+        
+        <div class="all_details_block_col">
+            <div class="all_details_block_col_item1">
+                <i class="material-icons all_details_block_col_icons"> watch_later </i> 
+            </div>
+            <div class="all_details_block_col_item2">
+                <p>Open Hours: </p>
+                <p>Sunday-Friday</p>
+                <p>9:00 AM to 8:00 PM</p>
+            </div>
+        </div>
+
+        <div class="all_details_block_col">
+            <div class="all_details_block_col_item1">
+                <i class="material-icons all_details_block_col_icons"> email </i> 
+            </div>
+            <div class="all_details_block_col_item2">
+                <p>Email: </p>
+                <p>krishnaelectronicsweb@gmail.com</p>
+            </div>
+        </div>
+
+        
+        <div class="all_details_block_col">
+            <div class="all_details_block_col_item1">
+                <i class="material-icons all_details_block_col_icons"> call </i> 
+            </div>
+            <div class="all_details_block_col_item2">
+                <p>Phone: </p>
+                <p>+91-9412366719</p>
+                <p>01237237700</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="bottom-row">
+        <div class="social-media">
+            <a href="https://www.facebook.com/official.krishna.electronics/" class="fa fa-facebook" target="_blank"></a>
+            <a href="https://www.google.com/search?q=krishna+electronics+sardhana&oq=krishna+electronics+sardhana&aqs=chrome..69i57j46i175i199j69i60l2.8259j1j7&sourceid=chrome&ie=UTF-8" class="fa fa-google" target="_blank"></a>
+            <a href="http://www.instagram.com/krishnaelectronicssardhana" class="fa fa-instagram" target="_blank"></a>
+        </div>
+        <div class="dev-info">
+            <h2>© Copyright 2021 Krishna Electronics. All rights reserved</h2>
+            <p>Goods once sold will not be taken back.
+                Warranty will be provided by company via their customer care numbers.
+                All disputes are subject to Meerut jurisdiction only.</p>
+            <p> All Rights Reserved | POWERED BY Developers Vaibhav Chauhan and Vibhor Shukla </p>
+        </div>
+    </div>
+
+    <script src=" {%static 'shop/javascript/myscript.js'%} "></script>
+
+</body>
+
+</html>
+
+
+
+
